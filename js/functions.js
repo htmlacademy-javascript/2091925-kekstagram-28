@@ -89,7 +89,7 @@ function addCharactersToTheString(sourceString, minimumLength, additionalСharac
 }
 
 // Cтрока короче 20 символов
-console.log(getAnswAboutStrLen('проверяемая строка', 20)); // true
+/*console.log(getAnswAboutStrLen('проверяемая строка', 20)); // true
 // Длина строки ровно 18 символов
 console.log(getAnswAboutStrLen('проверяемая строка', 18)); // true
 // Строка длиннее 10 символов
@@ -125,4 +125,4 @@ console.log(addCharactersToTheString('q', 4, 'werty')); // 'werq'
 console.log(addCharactersToTheString('q', 4, 'we')); // 'wweq'
 
 // Добавочные символы не использованы, исходная строка не изменена
-console.log(addCharactersToTheString('qwerty', 4, '0')); // 'qwerty'
+console.log(addCharactersToTheString('qwerty', 4, '0')); // 'qwerty'*/
