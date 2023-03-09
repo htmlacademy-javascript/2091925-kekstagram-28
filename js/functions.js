@@ -89,40 +89,40 @@ function addCharactersToTheString(sourceString, minimumLength, additionalСharac
 }
 
 // Cтрока короче 20 символов
-/*console.log(getAnswAboutStrLen('проверяемая строка', 20)); // true
+getAnswAboutStrLen('проверяемая строка', 20); // true
 // Длина строки ровно 18 символов
-console.log(getAnswAboutStrLen('проверяемая строка', 18)); // true
+getAnswAboutStrLen('проверяемая строка', 18); // true
 // Строка длиннее 10 символов
-console.log(getAnswAboutStrLen('проверяемая строка', 10)); // false
+getAnswAboutStrLen('проверяемая строка', 10); // false
 
 // Строка является палиндромом
-console.log(isPolindrom('топот')); // true
+isPolindrom('топот'); // true
 // Несмотря на разный регистр, тоже палиндром
-console.log(isPolindrom('ДовОд')); // true
+isPolindrom('ДовОд'); // true
 // Это не палиндром
-console.log(isPolindrom('Кекс')); // false
+isPolindrom('Кекс'); // false
 
-console.log(getTheNumbers2('2023 год')); // 2023
-console.log(getTheNumbers2('ECMAScript 2022')); // 2022
-console.log(getTheNumbers2('1 кефир, 0.5 батона')); // 105
-console.log(getTheNumbers2('агент 007')); // 7
-console.log(getTheNumbers2('а я томат')); // NaN
+getTheNumbers2('2023 год'); // 2023
+getTheNumbers2('ECMAScript 2022'); // 2022
+getTheNumbers2('1 кефир, 0.5 батона'); // 105
+getTheNumbers2('агент 007'); // 7
+getTheNumbers2('а я томат'); // NaN
 
-console.log(getTheNumbers2(2023)); // 2023
-console.log(getTheNumbers2(-1)); // 1
-console.log(getTheNumbers2(1.5)); // 15
+getTheNumbers2(2023); // 2023
+getTheNumbers2(-1); // 1
+getTheNumbers2(1.5); // 15
 
 // Добавочный символ использован один раз
-console.log(addCharactersToTheString('1', 2, '0')); // '01'
+addCharactersToTheString('1', 2, '0'); // '01'
 
 // Добавочный символ использован три раза
-console.log(addCharactersToTheString('1', 4, '0')); // '0001'
+addCharactersToTheString('1', 4, '0'); // '0001'
 
 // Добавочные символы обрезаны с конца
-console.log(addCharactersToTheString('q', 4, 'werty')); // 'werq'
+addCharactersToTheString('q', 4, 'werty'); // 'werq'
 
 // Добавочные символы использованы полтора раза
-console.log(addCharactersToTheString('q', 4, 'we')); // 'wweq'
+addCharactersToTheString('q', 4, 'we'); // 'wweq'
 
 // Добавочные символы не использованы, исходная строка не изменена
-console.log(addCharactersToTheString('qwerty', 4, '0')); // 'qwerty'*/
+addCharactersToTheString('qwerty', 4, '0'); // 'qwerty'*/
