@@ -66,5 +66,6 @@ const createDescriptionObject = () => ({
 });
 
 const descriptionObject = Array.from({length:25}, createDescriptionObject);
+descriptionObject();
 
-/*console.log(descriptionObject);*/
+//console.log(descriptionObject);
