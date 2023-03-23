@@ -1,3 +1,8 @@
+const NUM_OF_AVATAR = 6;
+const MAX_LIKES = 200;
+const MIN_LIKES = 15;
+const MAX_PHOTO_ID = 25;
+const MAX_PHOTO_URL = 25;
 const DESCRIPTIONS = [
   'Завораживающее изображение, на котором мы видим что-то интересное',
   'Картинка, наполненная душой автора, выполненая в необычайном стиле',
@@ -46,13 +51,13 @@ const getUnicRandomNum = (min, max) => {
 };
 
 const createRandomArrayElement = (elements) => elements[getRandomNum(0, elements.length - 1)];
-const createRandomPhotoId = getUnicRandomNum(1, 25);
-const createRandomUrl = getUnicRandomNum(1, 25);
+const createRandomPhotoId = getUnicRandomNum(1, MAX_PHOTO_ID);
+const createRandomUrl = getUnicRandomNum(1, MAX_PHOTO_URL);
 const createRandomCommentId = getUnicRandomNum(100,135);
 
 const createComment = () => ({
   id: createRandomCommentId(),
-  avatar: `img/avatar-${getRandomNum(1,6)}.svg`,
+  avatar: `img/avatar-${getRandomNum(1,NUM_OF_AVATAR)}.svg`,
   message: createRandomArrayElement(COMMENTS),
   name: createRandomArrayElement(NAMES),
 });
@@ -61,11 +66,13 @@ const createDescriptionObject = () => ({
   id: createRandomPhotoId(),
   url: `photos/${createRandomUrl()}.jpg`,
   description: createRandomArrayElement(DESCRIPTIONS),
-  likes: getRandomNum(15,200),
+  likes: getRandomNum(MIN_LIKES,MAX_LIKES),
   comments:  createComment(),
 });
 
-const descriptionObject = Array.from({length:25}, createDescriptionObject);
-descriptionObject();
+const getArrayOfObjects = () => function() {
+  return Array.from({length: 25}, createDescriptionObject);
+};
 
-//console.log(descriptionObject);
+const getDescriptionObjects = getArrayOfObjects();
+getDescriptionObjects();
