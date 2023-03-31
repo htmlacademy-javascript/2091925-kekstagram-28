@@ -1,4 +1,2 @@
-import { getArrayOfObjects } from './data.js';
-
-const getDescriptionObjects = getArrayOfObjects();
-getDescriptionObjects();
+import { renderingPhotos } from './renderingDescriptionObjects.js';
+renderingPhotos();

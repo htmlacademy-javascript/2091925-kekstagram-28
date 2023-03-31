@@ -40,12 +40,12 @@ const createRandomArrayElement = (elements) =>
 const createRandomPhotoId = getUnicRandomNum(1, MAX_PHOTO_ID);
 const createRandomUrl = getUnicRandomNum(1, MAX_PHOTO_URL);
 const createRandomCommentId = getUnicRandomNum(100, 135);
-const createComment = () => ({
+const createComment = () => ([{
   id: createRandomCommentId(),
   avatar: `img/avatar-${getRandomNum(1, NUM_OF_AVATAR)}.svg`,
   message: createRandomArrayElement(COMMENTS),
   name: createRandomArrayElement(NAMES),
-});
+}]);
 
 const createDescriptionObject = () => ({
   id: createRandomPhotoId(),
@@ -55,9 +55,7 @@ const createDescriptionObject = () => ({
   comments: createComment(),
 });
 
-const getArrayOfObjects = () =>
-  function () {
-    return Array.from({ length: 25 }, createDescriptionObject);
-  };
+const getArrayOfObjects = (length) => Array.from({ length:length }, createDescriptionObject);
+
 
 export { getArrayOfObjects };
