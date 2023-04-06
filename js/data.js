@@ -40,19 +40,19 @@ const createRandomArrayElement = (elements) =>
 const createRandomPhotoId = getUnicRandomNum(1, MAX_PHOTO_ID);
 const createRandomUrl = getUnicRandomNum(1, MAX_PHOTO_URL);
 const createRandomCommentId = getUnicRandomNum(100, 135);
-const createComment = () => ([{
+const createComment = () => ({
   id: createRandomCommentId(),
   avatar: `img/avatar-${getRandomNum(1, NUM_OF_AVATAR)}.svg`,
   message: createRandomArrayElement(COMMENTS),
   name: createRandomArrayElement(NAMES),
-}]);
+});
 
 const createDescriptionObject = () => ({
   id: createRandomPhotoId(),
   url: `photos/${createRandomUrl()}.jpg`,
   description: createRandomArrayElement(DESCRIPTIONS),
   likes: getRandomNum(MIN_LIKES, MAX_LIKES),
-  comments: createComment(),
+  comments: Array.from({ length: getRandomNum(1,15) }, createComment),
 });
 
 const getArrayOfObjects = (length) => Array.from({ length:length }, createDescriptionObject);
