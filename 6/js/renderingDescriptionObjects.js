@@ -1,5 +1,5 @@
 import {getArrayOfObjects} from './data.js';
-import {displayingBigPhoto} from './renderingBigImage.js';
+import {displayingBigPhoto} from './dispalyingBigPicture.js';
 const galery = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture')
   .content
