@@ -4,12 +4,19 @@ const description = document.querySelector('.social__caption');
 const socialCommentsLoader = document.querySelector('.social__comments-loader');
 const bigPictureCommentsList = document.querySelector('.social__comments');
 
+let notHiddenComment = 0;
+
 const loaderOfComments = (comments) =>
   function () {
     let fiveComments = 0;
     for (let comment = 0; comment < comments.length; comment++) {
       if (comments[comment].classList.contains('hidden')) {
         comments[comment].classList.remove('hidden');
+        notHiddenComment++;
+        if(notHiddenComment === bigPictureCommentsList.children.length){
+          socialCommentsLoader.classList.add('hidden');
+          notHiddenComment = 0;
+        }
         fiveComments++;
         socialCommentCount.textContent = '';
         socialCommentCount.insertAdjacentHTML(
@@ -18,6 +25,7 @@ const loaderOfComments = (comments) =>
             comments.length
           } </span> комментариев`
         );
+
       }
       if (fiveComments === 5) {
         break;
@@ -27,7 +35,6 @@ const loaderOfComments = (comments) =>
 
 const uploadComments = loaderOfComments(bigPictureCommentsList.children);
 socialCommentsLoader.addEventListener('click', uploadComments);
-
 const createCommentOfBigPicture = (element) => {
   const similarListFragment = document.createDocumentFragment();
   const elementImg = element.querySelector('.picture__img');
@@ -44,8 +51,12 @@ const createCommentOfBigPicture = (element) => {
   let j = 0;
   for (let i = 0; i < arrayOfComments.length; i++) {
     if (i >= 5) {
+      socialCommentsLoader.classList.remove('hidden');
       li.classList.add('hidden');
       j++;
+    }else{
+      notHiddenComment++;
+      socialCommentsLoader.classList.add('hidden');
     }
     socialCommentCount.textContent = '';
     socialCommentCount.insertAdjacentHTML(
@@ -69,4 +80,4 @@ const createCommentOfBigPicture = (element) => {
   return similarListFragment;
 };
 
-export { createCommentOfBigPicture, loaderOfComments, bigPictureCommentsList };
+export {createCommentOfBigPicture, loaderOfComments, bigPictureCommentsList};
